@@ -1,0 +1,32 @@
+{
+  "name": "mr_probot",
+  "version": "1.0.0",
+  "description": "A Slack-bot that tells team members which pull requests they are responsible for reviewing or editing, depending on labels",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PracticallyGreen/mr_probot.git"
+  },
+  "keywords": [
+    "slack",
+    "github",
+    "pull",
+    "request"
+  ],
+  "author": "chanson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PracticallyGreen/mr_probot/issues"
+  },
+  "homepage": "https://github.com/PracticallyGreen/mr_probot#readme",
+  "dependencies": {
+    "@slack/client": "^3.8.1",
+    "github": "^8.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
