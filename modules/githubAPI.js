@@ -5,17 +5,21 @@ function GitHubClient() {
   this.gh = new GitHub({
     token: ghConfig.token
   });
-  this.repo = this.gh.getRepo(ghConfig.fullRepository);
+  this.issue = this.gh.getIssues(ghConfig.owner, ghConfig.repo)
 }
 
 GitHubClient.prototype.fetchPullRequests = function() {
-  return this.repo.listPullRequests().then(function(response) {
-    return response.data.map(function(pull) {
+  return this.issue.listIssues().then(function(response) {
+    return response.data.filter(isPullRequest).map(function(pull) {
       return pull.title;
     });
   }).catch(function(error) {
     console.log(error);
   });
+}
+
+function isPullRequest(issue) {
+  return issue.hasOwnProperty('pull_request')
 }
 
 module.exports = GitHubClient;

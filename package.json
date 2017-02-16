@@ -4,7 +4,7 @@
   "description": "A Slack-bot that tells team members which pull requests they are responsible for reviewing or editing, depending on labels",
   "main": "index.js",
   "scripts": {
-    "test": "",
+    "test": "mocha test/ --recursive",
     "start": "node fake_start.js"
   },
   "repository": {
