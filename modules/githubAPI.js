@@ -11,11 +11,25 @@ function GitHubClient() {
 GitHubClient.prototype.fetchPullRequests = function() {
   return this.issue.listIssues().then(function(response) {
     return response.data.filter(isPullRequest).map(function(pull) {
-      return pull.title;
+      return {
+        assignees: pull.assignees.map(getAssigneeNames),
+        author: pull.user.login,
+        labels: pull.labels.map(getLabelNames),
+        link: pull.pull_request.html_url,
+        title: pull.title
+      };
     });
   }).catch(function(error) {
     console.log(error);
   });
+}
+
+function getAssigneeNames(assignee) {
+  return assignee.login;
+}
+
+function getLabelNames(label) {
+  return label.name;
 }
 
 function isPullRequest(issue) {

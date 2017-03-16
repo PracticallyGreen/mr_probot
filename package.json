@@ -26,7 +26,8 @@
   "dependencies": {
     "@slack/client": "^3.8.1",
     "github": "^8.1.1",
-    "github-api": "^3.0.0"
+    "github-api": "^3.0.0",
+    "randomcolor": "^0.4.4"
   },
   "devDependencies": {
     "chai": "^3.5.0",
