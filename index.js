@@ -7,6 +7,7 @@ thisGH.fetchPullRequests().then(function(pulls) {
   var thisFormatter = new ResponseFormatter(pulls);
 
   var thisSlack = new SlackClient({
+    iconUrl: 'http://i.imgur.com/dlYFukB.jpg',
     type: 'message',
     text: "Hello there! These are your open prs:",
     attachments: thisFormatter.buildAttachments()

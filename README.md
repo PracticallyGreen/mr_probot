@@ -1,4 +1,6 @@
 # Mr. Probot
+<img src="http://i.imgur.com/bPaHlhs.png" width="200">
+
 A node script that pulls together all pull requests for a team, and builds a slack message from them
 to let each team member know which pull requests they are responsible for, and what there role is
 for the pr depending on labels.
